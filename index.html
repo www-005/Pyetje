@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Ndihma e Parë – Kryqi i Kuq</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container" id="home">
+    <h1>Test Ndihma e Parë</h1>
+    <p>Zgjidh testin për të filluar</p>
+    <button onclick="startTest(0)">Testi 1</button>
+    <button onclick="startTest(1)">Testi 2</button>
+    <button onclick="startTest(2)">Testi 3</button>
+</div>
+
+<div class="container hidden" id="quiz">
+    <h2 id="questionText"></h2>
+    <div id="options"></div>
+
+    <div class="nav">
+        <button onclick="prevQuestion()">⬅ Para</button>
+        <button onclick="nextQuestion()">Pas ➡</button>
+    </div>
+
+    <button class="finish hidden" onclick="finishTest()">Përfundo Testin</button>
+</div>
+
+<div class="container hidden" id="result">
+    <h2 id="resultText"></h2>
+    <button id="nextTestBtn" class="hidden" onclick="nextTest()">Fillo Testin Tjetër</button>
+    <button id="retryBtn" class="hidden" onclick="retryTest()">Fillo Sërish</button>
+</div>
+
+<script src="questions.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
