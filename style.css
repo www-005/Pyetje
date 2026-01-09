@@ -1,53 +1,114 @@
-body {
-    font-family: Arial, sans-serif;
-    background: #f4f6f8;
+/* Reset bazik */
+* {
+    box-sizing: border-box;
     margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
 }
 
+/* Container i përgjithshëm */
 .container {
-    max-width: 700px;
-    margin: 40px auto;
-    background: white;
-    padding: 25px;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f0f0f5;
     border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
+/* Titujt */
+h1, h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Teksti i udhëzimit */
+p {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Butonat */
 button {
-    padding: 10px 20px;
-    margin: 10px;
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 10px auto;
+    padding: 12px 20px;
+    font-size: 16px;
     border: none;
-    border-radius: 6px;
-    background: #c62828;
+    border-radius: 8px;
+    background-color: #4CAF50;
     color: white;
     cursor: pointer;
-    font-size: 16px;
+    transition: background 0.3s;
 }
 
 button:hover {
-    background: #a51d1d;
+    background-color: #45a049;
+}
+
+/* Opsionet e pyetjes */
+#options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.option-btn {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #4CAF50;
+    background-color: white;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+.option-btn:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Navigimi mes pyetjeve */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
 }
 
 .hidden {
     display: none;
 }
 
-#options {
-    text-align: left;
-    margin-top: 20px;
-}
+/* Për ekran të vogël (mobile) */
+@media screen and (max-width: 500px) {
+    .container {
+        margin: 10px;
+        padding: 15px;
+    }
 
-.option {
-    margin: 10px 0;
-}
+    h1 {
+        font-size: 24px;
+    }
 
-.nav {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-}
+    h2 {
+        font-size: 20px;
+    }
 
-.finish {
-    background: #2e7d32;
+    button {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+
+    .option-btn {
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+
+    .nav {
+        flex-direction: column;
+        gap: 10px;
+    }
 }
