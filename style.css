@@ -1,114 +1,106 @@
-/* Reset bazik */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+body {
     font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    margin: 0;
 }
 
-/* Container i përgjithshëm */
 .container {
-    max-width: 800px;
-    margin: 20px auto;
+    max-width: 700px;
+    margin: 20px auto; /* pak më pak margjin për celular */
+    background: white;
     padding: 20px;
-    background-color: #f0f0f5;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-/* Titujt */
 h1, h2 {
-    text-align: center;
-    margin-bottom: 20px;
+    font-size: 1.5em; /* më të mëdha për celular */
 }
 
-/* Teksti i udhëzimit */
 p {
-    text-align: center;
-    margin-bottom: 20px;
+    font-size: 1em;
 }
 
-/* Butonat */
 button {
-    display: block;
-    width: 100%;
-    max-width: 300px;
-    margin: 10px auto;
-    padding: 12px 20px;
-    font-size: 16px;
+    padding: 12px 25px; /* më të mëdha për prekje më të lehtë */
+    margin: 10px 5px;
     border: none;
-    border-radius: 8px;
-    background-color: #4CAF50;
+    border-radius: 6px;
+    background: #c62828;
     color: white;
     cursor: pointer;
-    transition: background 0.3s;
+    font-size: 16px;
+    width: 90%; /* butonat mbulojnë shumicën e ekranit në celular */
+    max-width: 300px; /* nuk shkojnë shumë të gjata */
 }
 
 button:hover {
-    background-color: #45a049;
-}
-
-/* Opsionet e pyetjes */
-#options {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 20px;
-}
-
-.option-btn {
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 8px;
-    border: 1px solid #4CAF50;
-    background-color: white;
-    cursor: pointer;
-    transition: background 0.3s, color 0.3s;
-}
-
-.option-btn:hover {
-    background-color: #4CAF50;
-    color: white;
-}
-
-/* Navigimi mes pyetjeve */
-.nav {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
+    background: #a51d1d;
 }
 
 .hidden {
     display: none;
 }
 
-/* Për ekran të vogël (mobile) */
-@media screen and (max-width: 500px) {
+#options {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.option {
+    margin: 10px 0;
+    font-size: 1em;
+    padding: 10px;
+    background: #f0f0f0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.option:hover {
+    background: #e0e0e0;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    flex-wrap: wrap; /* në celular, butonat vendosen poshtë njëri-tjetrit nëse nuk ka vend */
+}
+
+.finish {
+    background: #2e7d32;
+}
+
+/* MEDIA QUERY për celular */
+@media screen and (max-width: 480px) {
     .container {
         margin: 10px;
         padding: 15px;
     }
 
-    h1 {
-        font-size: 24px;
-    }
-
-    h2 {
-        font-size: 20px;
+    h1, h2 {
+        font-size: 1.3em;
     }
 
     button {
-        font-size: 14px;
-        padding: 10px 15px;
+        font-size: 18px;
+        padding: 15px;
+        width: 100%;
+        max-width: none;
     }
 
-    .option-btn {
-        font-size: 14px;
-        padding: 8px 10px;
+    .nav button {
+        width: 48%; /* dy butona në një rresht për celular */
+        margin-bottom: 10px;
     }
 
-    .nav {
-        flex-direction: column;
-        gap: 10px;
+    #options {
+        margin-top: 15px;
+    }
+
+    .option {
+        font-size: 1em;
+        padding: 12px;
     }
 }
